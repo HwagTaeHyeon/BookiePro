@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.bookie.mapper.comment.QnaCommentMapper">
+	<resultMap type="comment" id="cmt">
+		<id property="id" column="id"/>
+		<result property="boardId" column="qna_board_id"/>
+		<result property="userId" column="user_id"/>
+		<result property="writer" column="writer"/>
+		<result property="message" column="message"/>
+		<result property="wtDate" column="w_date"/>
+		<collection property="replyList" column="id" select="getReplyByCommentId"/>
+	</resultMap>
+	<resultMap type="reply" id="rpl">
+		<id property="id" column="id"/>
+		<result property="boardId" column="qna_board_id"/>
+		<result property="commentId" column="qna_comment_id"/>
+		<result property="userId" column="user_id"/>
+		<result property="writer" column="writer"/>
+		<result property="message" column="message"/>
+		<result property="wtDate" column="w_date"/>
+	</resultMap>
+	<!-- 댓글 하나당 달린 리플 -->
+	<select id="getReplyListByCommentId" resultMap="rpl">
+		select qna_reply.id as id, qna_board_id, qna_comment_id, user_id, user.nickname as writer,  message 
+		from qna_reply join user on qna_reply.user_id = user.id where qna_comment_id=#{commentId} order by qna_reply.id 
+	</select>
+
+	<insert id="addComment" parameterType="comment" useGeneratedKeys="true" keyProperty="id"> 
+		insert into qna_comment (qna_board_id, user_id, message) values(#{boardId}, #{userId}, #{message})
+	</insert>
+	
+	<update id="updateComment" parameterType="String">
+		update qna_comment set message=#{message} where id=#{id}
+	</update>
+	
+	<select id="getCommentWdate" parameterType="long" resultType="String">
+		select w_date from qna_comment where id = #{id}
+	</select>
+	<delete id="deleteComment" parameterType="String">
+		delete from qna_comment where id =#{id}
+	</delete>
+
+</mapper>

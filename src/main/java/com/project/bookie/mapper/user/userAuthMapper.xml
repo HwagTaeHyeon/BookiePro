@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.bookie.mapper.user.UserAuthMapper">
+	<resultMap type="userVO" id="user_auth">
+		<result property="uEmail" column="u_email" />
+		<result property="uPwd" column="u_pwd" />
+		<result property="nickname" column="nickname" />
+		<result property="enabled" column="enabled" />
+		<collection property="authList" resultMap="authMap"></collection>
+	</resultMap>
+
+	<!-- UserAuth 클래스 -->
+	<resultMap type="userAuth" id="authMap">
+		<result property="uEmail" column="u_email" javaType="String" jdbcType="VARCHAR" />
+		<result property="auth" column="auth" />
+	</resultMap>
+
+	<!-- 한 유저 정보 + 권한 읽기 -->
+	<select id="read" resultMap="user_auth" parameterType="String">
+		select
+		u_email, u_pwd, nickname, enabled, au.auth
+		from user left join auth_user as au
+		on user.u_email = au.user_email
+		where au.user_email= #{uEmail, jdbcType=VARCHAR}
+	</select>
+	
+	<insert id="insertUserAuthWithuEmail" parameterType="String">
+		insert into auth_user(user_email, auth) values(#{uEmail, jdbcType=VARCHAR},#{auth})
+	</insert>
+
+	<!-- 회원 인증 테이블에 회원 아이디와 회원 인증키 추가 -->
+	<insert id="insertUserWithKey">
+		insert into auth_email(user_id, authkey) values(#{uId},#{authKey})
+	</insert>
+	<update id="updateUserWithKey">
+		update auth_email set user_id = #{uId}, authkey = #{authKey} where user_id=#{uId}
+	</update>
+	<!-- 이미 인증한 회원인지 확인하기 위해 키를 가져옴 -->
+	<select id="checkCertification" resultType="int">
+		select certification from user where id=#{uId}
+	</select>
+	<!-- 이메일 인증시 회원의 아이디에 따른 인증 키 확인 -->
+	<select id="selectKeyWithId" resultType="String">
+		select authkey from auth_email where user_id=#{uId}
+	</select>
+	<!-- 회원의 이메일 인증 여부 상태 변경 -->
+	<update id="updateUserCertification">
+		update user set certification=1 where id=#{uId}
+	</update>
+</mapper>

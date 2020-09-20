@@ -1,0 +1,181 @@
+/* article*/
+.article_container {
+	border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/*comment*/
+.commentForm {
+	width: 100%;
+}
+
+.label_summit {
+	width: 100%;
+}
+
+.comment_list {
+	list-style: none;
+	border-top: 1px solid #ddd;
+	width: 96%;
+}
+
+.boardContainer {
+	font-size: 13px;
+	padding: 0 70px;
+}
+
+.writer {
+	font-weight: 900;
+	margin-bottom: 2px;
+}
+
+.comment_index {
+	font-size: 12px;
+}
+
+.comment_aTag {
+	font-size: 12px;
+}
+
+.wdate {
+	margin-right: 20px;
+}
+
+.comment_index {
+	margin-top: 7px;
+}
+
+.commentContainer {
+	margin: 12px 0 10px 0;
+}
+
+.comment_box {
+	margin: 15px 80px;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-o-border-radius: 6px;
+	width: 85%;
+	background-color: #fefefe;
+	padding: 16px 10px 10px 18px;
+}
+
+.comment_nickname {
+	margin-bottom: 10px;
+}
+
+.comment_input {
+	overflow: hidden;
+	overflow-wrap: break-word;
+	height: 32px;
+	max-height: 500px;
+	font-size: 13px;
+	resize: none;
+	display: block;
+	border: none;
+	width: 80%;
+	font-weight: lighter;
+}
+
+.comment_input:focus {
+	outline: none;
+	border: none;
+}
+
+.comment_submit {
+	display: block;
+	min-width: 43px;
+	height: 32px;
+	font-size: 13px;
+	color: #ffffff;
+	background-color: #0f4c75;
+	border-radius: 6px;
+	box-sizing: border-box;
+	border: 0;
+	outline: 0;
+	position: relative;
+	margin: 0 10% 0 90%;
+}
+
+.temp {
+	margin: 15px 80px;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-o-border-radius: 6px;
+	width: 80%;
+	background-color: #fefefe;
+	padding: 16px 10px 10px 18px;
+}
+
+.comment_input_temp {
+	overflow: hidden;
+	overflow-wrap: break-word;
+	height: 32px;
+	max-height: 500px;
+	font-size: 13px;
+	resize: none;
+	display: block;
+	border: none;
+	width: 75%;
+	font-weight: lighter;
+}
+
+.comment_input_temp:focus {
+	outline: none;
+	border: none;
+}
+
+/*reply*/
+.replyContainer {
+	margin-left: 1.5%;
+}
+
+.reply_rep {
+	float: left;
+	margin-right: 1%;
+}
+
+.reply_submit {
+	display: block;
+	min-width: 43px;
+	height: 32px;
+	font-size: 13px;
+	color: #ffffff;
+	background-color: #0f4c75;
+	border-radius: 6px;
+	box-sizing: border-box;
+	border: 0;
+	outline: 0;
+	position: relative;
+	margin: 0 10% 0 90%;
+}
+
+/*수정, 삭제 버튼*/
+.BtnDiv {
+	display: inline;
+	position: relative;
+	left: 80%;
+	position: relative;
+}
+
+.Btn {
+	display: inline-block;
+	min-width: 38px;
+	height: 29px;
+	font-size: 13px;
+	border-radius: 6px;
+	font-size: 13px;
+	padding: 4px 5px;
+}
+
+.Btn:focus {
+	outline: none;
+}
+
+.Btn:active {
+	outline: none;
+}

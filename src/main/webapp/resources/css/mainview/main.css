@@ -1,0 +1,77 @@
+.main-body{
+	margin-top: 30px;
+}
+.thumbnail a {
+	text-decoration: none;
+}
+.img {
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: 0.7;
+	text-align: center;
+	width: 100%;
+	height: 300px;
+}
+.cap {
+	/*글자 수 111자*/
+	margin: 0;
+	color: #ffffff;
+	font-size: 20px;
+	height: 82%;
+	font-weight: bold;
+	text-align: center;
+	padding: 0 15px 0 15px;
+	word-break: break-all;
+	letter-spacing: -0.1px;
+	/*드래그 금지*/
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	color: #ffffff;
+}
+.writer {
+	color: #ffffff;
+	font-size: 15px;
+	display: inline;
+	padding-left: 15px;
+	/*드래그 금지*/
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+.slide-head{
+	border-top: 5px solid #000000;
+	border-bottom: 5px solid #000000;
+	
+	border-radius: 30px;
+}
+.certification_result{
+	margin:300px auto 300px auto;
+}
+.slide-div{
+	text-align: right;
+}
+.slide-ex{
+	padding-right: 175px;
+}
+.h4{
+	line-height:30px; !important;
+}
+.carousel-control:active{
+	background: none;
+}
+.carousel-control:focus{
+	background: none;
+}
+.carousel-control:hover{
+	opacity:0.4;
+	border-radius: 30px;
+}
+.carousel-control{
+	background: none;
+	opacity:0;
+}

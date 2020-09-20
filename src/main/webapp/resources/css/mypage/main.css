@@ -1,0 +1,22 @@
+div.div-container {
+	color: #000000;
+	border: 1px solid #bbbbbb;
+	padding: 50px 60px;
+	margin: 0 auto 5%;
+	-webkit-box-shadow: 1px 4px 26px 1px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 1px 4px 26px 1px rgba(0, 0, 0, 0.75);
+	box-shadow: 1px 4px 26px 1px rgba(0, 0, 0, 0.75);
+	border-radius: 10px;
+	line-height: 30px;
+}
+.menu-line>ul>li{
+	border-bottom: 1px solid #b0b0b0;
+	padding-right: 1px;
+}
+.menu-line>ul>li>a{
+	padding-right: 10px 0;
+}
+.col-md-4 {
+    width: 23.33333333%;
+    margin-right: 75px;
+}
